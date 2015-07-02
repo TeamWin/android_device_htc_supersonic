@@ -30,7 +30,7 @@ TARGET_ARCH := arm
 TARGET_ARCH_VARIANT := armv7-a-neon
 TARGET_CPU_ABI := armeabi-v7a
 TARGET_CPU_ABI2 := armeabi
-TARGET_CPU_VARIANT := scorpion
+TARGET_CPU_VARIANT := cortex-a8
 
 TARGET_BOOTLOADER_BOARD_NAME := supersonic
 
@@ -64,11 +64,11 @@ BOARD_FLASH_BLOCK_SIZE := 131072
 
 # TWRP specific build flags
 DEVICE_RESOLUTION := 480x800
-TARGET_RECOVERY_PIXEL_FORMAT := "BGR_565"
 TW_BRIGHTNESS_PATH := /sys/class/leds/lcd-backlight/brightness
 TW_NO_SCREEN_BLANK := true
 TW_EXCLUDE_ENCRYPTED_BACKUPS := true
 TW_EXCLUDE_MTP := true
+TW_EXCLUDE_SUPERSU := true
 TW_NO_CPU_TEMP := true
 TW_NO_EXFAT := true
 TW_NO_EXFAT_FUSE := true
