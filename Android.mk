@@ -14,10 +14,10 @@
 # limitations under the License.
 #
 
+ifeq ($(TARGET_DEVICE),supersonic)
+
 LOCAL_PATH := $(call my-dir)
 
-ifeq ($(TARGET_DEVICE),supersonic)
 include $(call all-subdir-makefiles,$(LOCAL_PATH))
-
 include $(CLEAR_VARS)
 endif

@@ -23,7 +23,6 @@
 # WARNING: This line must come *before* including the proprietary
 # variant, so that it gets overwritten by the parent (which goes
 # against the traditional rules of inheritance).
-USE_CAMERA_STUB := true
 
 # Arm (v7a) w/ neon
 TARGET_ARCH := arm
@@ -35,13 +34,11 @@ TARGET_CPU_VARIANT := cortex-a8
 TARGET_BOOTLOADER_BOARD_NAME := supersonic
 
 # Kernel
+BOARD_CUSTOM_BOOTIMG_MK := device/htc/supersonic/custombootimg.mk
 BOARD_KERNEL_CMDLINE := no_console_suspend=1 androidboot.selinux=permissive
 BOARD_KERNEL_BASE := 0x20000000
 BOARD_KERNEL_NEW_PPPOX := true
 TARGET_PREBUILT_KERNEL := device/htc/supersonic/kernel
-
-BOARD_VENDOR_QCOM_GPS_LOC_API_HARDWARE := supersonic
-BOARD_VENDOR_QCOM_GPS_LOC_API_AMSS_VERSION := 1240
 
 # USB
 TARGET_USE_CUSTOM_LUN_FILE_PATH := /sys/devices/platform/usb_mass_storage/lun%d/file
@@ -63,14 +60,11 @@ BOARD_USERDATAIMAGE_PARTITION_SIZE := 448397312
 BOARD_FLASH_BLOCK_SIZE := 131072
 
 # TWRP specific build flags
-DEVICE_RESOLUTION := 480x800
+TW_THEME := portrait_mdpi
 TW_BRIGHTNESS_PATH := /sys/class/leds/lcd-backlight/brightness
-TW_NO_SCREEN_BLANK := true
+TW_EXCLUDE_DEFAULT_USB_INIT := true
 TW_EXCLUDE_ENCRYPTED_BACKUPS := true
-TW_EXCLUDE_MTP := true
 TW_EXCLUDE_SUPERSU := true
+TW_EXCLUDE_MTP := true
 TW_NO_CPU_TEMP := true
-TW_NO_EXFAT := true
 TW_NO_EXFAT_FUSE := true
-
-BOARD_CUSTOM_BOOTIMG_MK := device/htc/supersonic/custombootimg.mk
